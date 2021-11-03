@@ -14,7 +14,7 @@ function createWindow () {
     // webPreferences: {
     //   preload: path.join(__dirname, 'preload.js')
     // }
-    icon: `./public/qqyy.png`,
+    icon: `./public/favicon.ico`,
     autoHideMenuBar: true,
     // titleBarStyle: 'hidden',
     // titleBarOverlay: true,
