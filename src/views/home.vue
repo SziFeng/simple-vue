@@ -3,12 +3,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from "vue";
+import { defineComponent, reactive, ref } from 'vue';
 
 export default defineComponent({
-  name: "home",
+  name: 'home',
   setup() {
-    const name = ref("Welcome to my music player !");
+    const name = ref('Welcome to my music player !');
     return {
       name,
     };
