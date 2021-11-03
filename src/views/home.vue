@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from "@vue/runtime-core";
+import { defineComponent, reactive, ref } from "vue";
 
 export default defineComponent({
   name: "home",
