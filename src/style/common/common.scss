@@ -1,0 +1,30 @@
+.full-height {
+  height: 100%;
+}
+.full-width {
+  width: 100%;
+}
+.full-all {
+  width: 100%;
+  height: 100%;
+}
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+
+@each $dir in start, center, end, between {
+  .flex-#{$dir} {
+    display: flex;
+    align-items: center;
+    @if $dir==center {
+      justify-content: #{$dir};
+    } @else if $dir==between {
+      justify-content: space-between;
+    } @else {
+      justify-content: flex-#{$dir};
+    }
+  }
+}
