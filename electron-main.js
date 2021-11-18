@@ -12,16 +12,16 @@ function createWindow () {
     minHeight: 650,
     minWidth: 1100,
     // webPreferences: {
-    //   preload: path.join(__dirname, 'preload.js')
-    // }
+    // preload: path.join(__dirname, 'preload.js')
+    // },
     icon: `./public/favicon.ico`,
-    autoHideMenuBar: true,
     // titleBarStyle: 'hidden',
     // titleBarOverlay: true,
-    frame: false,
-    useContentSize: true,
+    // frame: false,
+    // useContentSize: true,
+    frame: false,   //要创建无边框窗口
+    transparent: true, // 窗口是否支持透明，如果想做高级效果最好为true
   })
-
 
   // 加载 index.html
   mainWindow.loadFile('./dist/index.html')

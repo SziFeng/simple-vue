@@ -74,7 +74,7 @@ function drawerAll (array) {
   return new Promise((resolve) => {
     setTimeout(() => {
       //清空画布
-      ctx.clearRect(-450, -450, 900, 900) // 清空画布
+      ctx.clearRect(-400, -400, 800, 800) // 清空画布
       const rects = [];
       array.forEach((res, i) => {
         const { cos, sin } = Cosandsin.get(Math.floor(i / time));
@@ -96,7 +96,8 @@ function startSort () {
   const sort = new CalculateMap();
   // sort.bubbleSort(nums, drawerAll); //冒泡
   // sort.selectionSort(nums, drawerAll); // 选择
-  sort.insertionSort(nums, drawerAll); // 插入
+  // sort.insertionSort(nums, drawerAll); // 插入
+  sort.radixSort(nums, 3, drawerAll);
 }
 
 // 乱序
