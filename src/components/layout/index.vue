@@ -3,13 +3,13 @@
     <div class="layout-sider">
       <Sider></Sider>
     </div>
-    <!-- <div class="layout-body">
+    <div class="layout-body">
       <Header></Header>
       <Body>
         <slot></slot>
       </Body>
       <Footer></Footer>
-    </div> -->
+    </div>
   </div>
 </template>
 

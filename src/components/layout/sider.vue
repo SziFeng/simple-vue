@@ -89,9 +89,11 @@ export default defineComponent({
   }
 
   .sider-menu {
+    box-sizing: border-box;
     padding: 0 16px;
     height: calc(100% - 80px);
     overflow: auto;
+    overflow-x: hidden;
   }
 }
 </style>
