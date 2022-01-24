@@ -1,7 +1,7 @@
 // electron-main.js
 
 // 控制应用生命周期和创建原生浏览器窗口的模组
-const { app, BrowserWindow, Menu } = require('electron')
+const { app, BrowserWindow, Menu,ipcMain } = require('electron')
 const path = require('path')
 
 function createWindow () {
@@ -9,25 +9,50 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 1200,
     height: 700,
-    minHeight: 650,
-    minWidth: 1100,
+    // minHeight: 650,
+    // minWidth: 1100,
     // webPreferences: {
-    //   preload: path.join(__dirname, 'preload.js')
-    // }
-    icon: `./public/favicon.ico`,
-    autoHideMenuBar: true,
+    // preload: path.join(__dirname, 'preload.js')
+    // },
+    icon: `./public/favicon1.ico`,
     // titleBarStyle: 'hidden',
+    // titleBarOverlay:{
+    //   color: '#fff',
+    //   symbolColor: '#333',
+    // },
     // titleBarOverlay: true,
-    frame: false,
+    // frame: false,
     useContentSize: true,
+    frame: false,   //要创建无边框窗口
+    // transparent: true, // 窗口是否支持透明，如果想做高级效果最好为true
   })
-
+  mainWindow.setMenu(null);
 
   // 加载 index.html
-  mainWindow.loadFile('./dist/index.html')
+  // mainWindow.loadFile('dist/index.html')
+  // mainWindow.loadURL("http://localhost:4200/");
+  mainWindow.loadURL("http://localhost:8081/");
 
   // 打开开发工具
-  // mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools();
+
+  // this.setSelfButtonFun(mainWindow);//
+  
+  ipcMain.on('win-close', () => {
+    mainWindow.close();
+  });
+
+  ipcMain.on('win-min', () => {
+    mainWindow.minimize();
+  });
+
+  ipcMain.on('win-max', () => {
+    if (mainWindow.isMaximized()) {
+      mainWindow.restore();
+    } else {
+      mainWindow.maximize();
+    }
+  });
 }
 
 // 这段程序将会在 Electron 结束初始化
@@ -49,5 +74,5 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
 
-// 在这个文件中，你可以包含应用程序剩余的所有部分的代码，
+// 在这个文件中，可以包含应用程序剩余的所有部分的代码，
 // 也可以拆分成几个文件，然后用 require 导入。

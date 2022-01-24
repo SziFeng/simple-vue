@@ -13,5 +13,6 @@ export default defineComponent({
 <style lang='scss' scoped>
 .layout-footer {
   height: 70px;
+  border-top: 1px solid #ccc;
 }
 </style>

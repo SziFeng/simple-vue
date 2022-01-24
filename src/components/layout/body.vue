@@ -14,7 +14,7 @@ export default defineComponent({
 
 <style lang='scss' scoped>
 .layout-body {
-  height: calc(100% - 150px);
+  height: calc(100% - 120px);
   overflow: auto;
 }
 </style>

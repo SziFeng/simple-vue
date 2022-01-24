@@ -1,6 +1,6 @@
 <template>
 <div class="full-height sider-container">
-  <div class="sider-logo flex-center">
+  <!-- <div class="sider-logo flex-center">
     <svg class="icon" aria-hidden="true">
         <use xlink:href="#maple-QQyinle"></use>
       </svg>
@@ -15,7 +15,7 @@
         @createSingList="createSingList">
       </Collapse>
     </template>
-  </div>
+  </div> -->
 </div>
 </template>
 
@@ -89,9 +89,11 @@ export default defineComponent({
   }
 
   .sider-menu {
+    box-sizing: border-box;
     padding: 0 16px;
     height: calc(100% - 80px);
     overflow: auto;
+    overflow-x: hidden;
   }
 }
 </style>
