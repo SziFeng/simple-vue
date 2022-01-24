@@ -37,7 +37,7 @@ function createWindow () {
   // mainWindow.webContents.openDevTools();
 
   // this.setSelfButtonFun(mainWindow);//
-  
+
   ipcMain.on('win-close', () => {
     mainWindow.close();
   });
