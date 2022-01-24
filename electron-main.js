@@ -24,7 +24,7 @@ function createWindow () {
     // frame: false,
     useContentSize: true,
     frame: false,   //要创建无边框窗口
-    // transparent: true, // 窗口是否支持透明，如果想做高级效果最好为true
+    transparent: true, // 窗口是否支持透明，如果想做高级效果最好为true
   })
   mainWindow.setMenu(null);
 
