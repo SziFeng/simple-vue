@@ -1,3 +1,3 @@
 # simple-vue
 
-smiple 222
+smiple
